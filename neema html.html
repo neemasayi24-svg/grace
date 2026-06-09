@@ -1,0 +1,148 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration form of employee</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: yellow;
+        }
+
+        form{
+            width: 800px;
+            margin: 50px auto;
+            padding: 50px;
+            background-color: blueviolet;
+            border: 10px solid black;
+            border-radius: 20px;
+            color: white;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"],
+        input[type="file"],
+        select{
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"]{
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover{
+            background-color: darkgreen;
+        }
+
+        h1{
+            text-align:center;
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="neema" method="post" onsubmit="return validateForm()">
+
+    <h1>NEEMA TECHNOLOGIES LTD</h1>
+
+    <label>Username:</label>
+    <input type="text" id="username" name="username">
+
+    <label>Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label>Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label>Sex:</label>
+    <select id="sex" name="sex">
+        <option value="">Select Sex</option>
+        <option>Male</option>
+        <option>Female</option>
+    </select>
+
+    <label>Favorite Color:</label>
+    <select id="color" name="color">
+        <option value="">Select Color</option>
+        <option>Red</option>
+        <option>Green</option>
+        <option>Blue Black</option>
+    </select>
+
+    <label>Attach File:</label>
+    <input type="file" id="file" name="file">
+
+    <label>Date:</label>
+    <input type="date" id="date" name="date">
+
+    <input type="submit" value="Submit">
+
+</form>
+
+<script>
+
+function validateForm(){
+
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+    let email = document.getElementById("email").value;
+    let sex = document.getElementById("sex").value;
+    let color = document.getElementById("color").value;
+    let date = document.getElementById("date").value;
+
+    if(username == ""){
+        alert("Please enter Username");
+        return false;
+    }
+
+    if(password == ""){
+        alert("Please enter Password");
+        return false;
+    }
+
+    if(password.length < 6){
+        alert("Password must be at least 6 characters");
+        return false;
+    }
+
+    if(email == ""){
+        alert("Please enter Email");
+        return false;
+    }
+
+    if(sex == ""){
+        alert("Please select Sex");
+        return false;
+    }
+
+    if(color == ""){
+        alert("Please select Favorite Color");
+        return false;
+    }
+
+    if(date == ""){
+        alert("Please select Date");
+        return false;
+    }
+
+    alert("Form Submitted Successfully");
+    return true;
+}
+
+</script>
+
+</body>
+</html>
+```
